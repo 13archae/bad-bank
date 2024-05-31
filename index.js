@@ -6,16 +6,16 @@ const UserContext = React.createContext(null);
 function Spa() {
   return (
     <HashRouter>
-      <div>
-        <h1>Routing - Hello World</h1>
-        <Nav />
-        <hr></hr>
-        <UserContext.Provider value={{ users: ["peter"] }}>
-          <Route path="/" exact component={Home}></Route>
-          <Route path="/about/" component={About}></Route>
-          <Route path="/products/" component={Products}></Route>
-        </UserContext.Provider>
-      </div>
+      <NavBar />
+      <UserContext.Provider value={{ users: ["peter"] }}>
+        <Route path="/" exact component={Home}></Route>
+        <Route path="/createaccount/" component={CreateAccount}></Route>
+        <Route path="/login/" component={Login}></Route>
+        <Route path="/deposit/" component={Deposit}></Route>
+        <Route path="/withdraw/" component={Withdraw}></Route>
+        <Route path="/balance/" component={Balance}></Route>
+        <Route path="/alldata/" component={AllData}></Route>
+      </UserContext.Provider>
     </HashRouter>
   );
 }

@@ -1,14 +1,13 @@
-function Nav() {}
-<ul className="nav">
-  <li className="nav-item">
-    <Link className="nav-link" to="/">
-      Home
-    </Link>
-    <Link className="nav-link" to="/about/">
-      About
-    </Link>
-    <Link className="nav-link" to="/products/">
-      Products
-    </Link>
-  </li>
-</ul>;
+function NavBar() {
+  return (
+    <>
+      <a href="#">Bad Bank</a>
+      <a href="#/createaccount/">Create Account</a>
+      <a href="#/login/">Login</a>
+      <a href="#/deposit/">Deposit</a>
+      <a href="#/withdraw/">Withdraw</a>
+      <a href="#/balance/">Balance</a>
+      <a href="#alldata">All Data</a>
+    </>
+  );
+}
