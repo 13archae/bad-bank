@@ -1,18 +1,14 @@
+const Route = ReactRouterDOM.Route;
+const Link = ReactRouterDOM.Link;
+const HashRouter = ReactRouterDOM.HashRouter;
+
 const UserContext = React.createContext(null);
 function Spa() {
-  const Route = ReactRouterDOM.Route;
-  const Link = ReactRouterDOM.Link;
-  const HashRouter = ReactRouterDOM.HashRouter;
-
   return (
     <HashRouter>
       <div>
         <h1>Routing - Hello World</h1>
-        <Link to="/">Home</Link>
-        &nbsp;&nbsp;
-        <Link to="/about/">About</Link>
-        &nbsp;&nbsp;
-        <Link to="/products/">Products</Link>
+        <Nav />
         <hr></hr>
         <UserContext.Provider value={{ users: ["peter"] }}>
           <Route path="/" exact component={Home}></Route>
