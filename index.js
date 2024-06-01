@@ -7,11 +7,12 @@ function Spa() {
           users: [
             {
               name: "Chris",
-              email: "13archae@gmail",
-              password: "secret",
+              email: "13archae@gmail.com",
+              password: "foo",
               balance: "100",
             },
           ],
+          activeuser: {},
         }}
       >
         <Route path="/" exact component={Home}></Route>
