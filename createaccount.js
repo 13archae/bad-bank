@@ -1,10 +1,33 @@
 function CreateAccount() {
+  const [show, setShow] = React.useState(true);
+  const [status, setStatus] = React.useState("");
+  const [name, setName] = React.useState("");
+  const [email, setEmail] = React.useState("");
+  const [password, setPassword] = React.useState("");
   const ctx = React.useContext(UserContext);
-  ctx.users.push(Math.random().toString(36).slice(2, 7));
+
   return (
-    <div>
-      <h3>Create Account</h3>
-      {JSON.stringify(ctx.users)}
-    </div>
+    <Card
+      bgColor="primary"
+      header="Create Account"
+      status={status}
+      body={show ? (
+        <>
+        Name<br/>
+        <input type="input" className="form-control" id="name" placeholder="Enter Name" value={name} onChange={
+          e => setName(e.currentTarget.value)} /> <br/>
+        }
+        </>
+      ) : (
+        <>
+        
+        
+        
+        </>
+
+
+      )}
+    
+    >
   );
 }

@@ -3,7 +3,7 @@ function AllData() {
   return (
     <div>
       <h3>All Data</h3>
-      {JSON.stringify(ctx.users)}
+      {JSON.stringify(ctx)}
     </div>
   );
 }

@@ -3,7 +3,7 @@ function Deposit() {
   return (
     <div>
       <h3>Deposit</h3>
-      {JSON.stringify(ctx.users)}
+      {JSON.stringify(ctx)}
     </div>
   );
 }

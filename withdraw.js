@@ -3,7 +3,7 @@ function Withdraw() {
   return (
     <div>
       <h3>Withdraw</h3>
-      {JSON.stringify(ctx.users)}
+      {JSON.stringify(ctx)}
     </div>
   );
 }

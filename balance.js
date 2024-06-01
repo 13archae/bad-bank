@@ -3,7 +3,7 @@ function Balance() {
   return (
     <div>
       <h3>Balance</h3>
-      {JSON.stringify(ctx.users)}
+      {JSON.stringify(ctx)}
     </div>
   );
 }

@@ -3,7 +3,7 @@ function Login() {
   return (
     <div>
       <h3>Login</h3>
-      {JSON.stringify(ctx.users)}
+      {JSON.stringify(ctx)}
     </div>
   );
 }
