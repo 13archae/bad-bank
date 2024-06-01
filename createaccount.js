@@ -9,62 +9,90 @@ function CreateAccount() {
   function handleCreate() {
     console.log(name, email, password);
 
-    if(!validate(name, 'name')) return;
-    if(!validate(email, 'email')) return;
-    if(!validate(password, 'password')) return;
+    if (!validate(name, "name")) return;
+    if (!validate(email, "email")) return;
+    if (!validate(password, "password")) return;
 
-    ctx.users.push({name, email, password, balance: 100});
+    ctx.users.push({ name, email, password, balance: 100 });
     setShow(false);
   }
-  
+
   function validate(field, label) {
     if (!field) {
-      setStatus('Error: ' + label);
-      setTimeout(() => setStatus(''), 3000);
+      setStatus("Error: " + label);
+      setTimeout(() => setStatus(""), 3000);
       return false;
     }
     return true;
   }
 
-  function clearform() {
-    setName('');
-    setEmail('');
-    setPassword('');
+  function clearForm() {
+    setName("");
+    setEmail("");
+    setPassword("");
     setShow(true);
   }
 
   return (
     <Card
-      bgColor="primary"
+      bgcolor="primary"
       header="Create Account"
       status={status}
-      body={show ? (
-        <>
-
-        Name<br/>
-        <input type="input" className="form-control" id="name" placeholder="Enter your Name" value={name} onChange={
-          e => setName(e.currentTarget.value)} /> <br/>
-    
-        Email<br/>
-            <input type="input" className="form-control" id="email" placeholder="Enter your Email" value={email} onChange={
-              e => setEmail(e.currentTarget.value)} /> <br/>
-        
-        Password<br/>
-            <input type="input" className="form-control" id="password" placeholder="Enter your Password" value={password} onChange={
-              e => setPassword(e.currentTarget.value)} /> <br/>
-        
-        <button type="submit className="btn btn-light onClick={handleCreate}>Create Account</button>
-
-        </>
-          ) : (
-        <>
-
-        <h5>Success!</h5>
-        <button type="submit" className="btn btn-light" onClick={clearForm}>Add another Account?</button>
-
-        </>
-      )}
-    
-    >
+      body={
+        show ? (
+          <>
+            Name
+            <br />
+            <input
+              type="input"
+              className="form-control"
+              id="name"
+              placeholder="Enter your Name"
+              value={name}
+              onChange={(e) => setName(e.currentTarget.value)}
+            />{" "}
+            <br />
+            Email
+            <br />
+            <input
+              type="input"
+              className="form-control"
+              id="email"
+              placeholder="Enter your Email"
+              value={email}
+              onChange={(e) => setEmail(e.currentTarget.value)}
+            />{" "}
+            <br />
+            Password
+            <br />
+            <input
+              type="input"
+              className="form-control"
+              id="password"
+              placeholder="Enter your Password"
+              value={password}
+              onChange={(e) => setPassword(e.currentTarget.value)}
+            />
+            <br />
+            <button
+              type="submit"
+              className="
+              btn
+              btn-light"
+              onClick={handleCreate}
+            >
+              Create Account
+            </button>
+          </>
+        ) : (
+          <>
+            <h5>Success!</h5>
+            <button type="submit" className="btn btn-light" onClick={clearForm}>
+              Add another Account?
+            </button>
+          </>
+        )
+      }
+    />
   );
 }

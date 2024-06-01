@@ -1,9 +1,19 @@
 function Login() {
+  const [status, setStatus] = React.useState("");
+  const [email, setEmail] = React.useState("");
+  const [password, setPassword] = React.useState("");
+
   const ctx = React.useContext(UserContext);
   return (
-    <div>
-      <h3>Login</h3>
-      {JSON.stringify(ctx)}
-    </div>
+    <Card
+      bgcolor="primary"
+      header="Login"
+      status={status}
+      body={
+
+
+        
+      }
+    ></Card>
   );
 }
