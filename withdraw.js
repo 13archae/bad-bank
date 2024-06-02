@@ -1,4 +1,4 @@
-function withdraw() {
+function Withdraw() {
   const [status, setStatus] = React.useState("");
   const [withdraw, setWithdraw] = React.useState(0);
 

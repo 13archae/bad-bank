@@ -9,10 +9,14 @@ function Deposit() {
   const [balance, setBalance] = React.useState(ctx.activeuser.balance);
 
   function addDeposit() {
-    if (deposit || deposit == 0 || typeof deposit !== "number") {
+    console.log("in addDeposit: ", deposit);
+
+    //                              typeof deposit !== 'number
+    if (!deposit || deposit == 0 || typeof parseInt(deposit) === null) {
+      console.log("in if");
       return;
     }
-    setBalance(balance + deposit);
+    setBalance(parseInt(balance) + parseInt(deposit));
     ctx.activeuser.balance = balance;
   }
 
@@ -41,8 +45,10 @@ function Deposit() {
               className="form-control"
               id="deposit"
               placeholder="Enter Deposit Amount"
-              value=""
-              onChange={(e) => setDeposit(e.currentTarget.value)}
+              onChange={(e) => {
+                console.log("e: ", e);
+                setDeposit(e.currentTarget.value);
+              }}
             />
             <br />
             <button
