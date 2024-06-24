@@ -1,6 +1,6 @@
 function Withdraw() {
   const [status, setStatus] = React.useState("");
-  const [withdraw, setWithdraw] = React.useState(0);
+  const [withdraw, setWithdraw] = React.useState(null);
   const [safeWithdraw, setSafeWithdraw] = React.useState(false);
 
   const ctx = React.useContext(UserContext);
@@ -13,10 +13,10 @@ function Withdraw() {
 
   const updateWithdraw = (value) => {
     console.log("value: ", value);
-    //console.log("Number.isNaN(value): ", Number.isNaN(parseInt(value)));
     if (value === "") {
+      console.log("in empty");
       setSafeWithdraw(false);
-      setDeposit(value);
+      setWithdraw(value);
       return;
     }
     if (Number.isNaN(parseInt(value))) {
@@ -34,40 +34,32 @@ function Withdraw() {
       setWithdraw(value);
       return;
     }
-    if (value > balance) {
+    if (value > parseInt(balance)) {
       setStatus("Error: You have exceeded your balance!");
       setTimeout(() => setStatus(""), 3000);
       setSafeWithdraw(false);
       setWithdraw(value);
       return;
     }
-    setSafeDeposit(true);
-    setDeposit(value);
+    console.log("all-pass");
+    setSafeWithdraw(true);
+    setWithdraw(value);
   };
 
   function subtractWithdraw() {
-    if (withdraw || withdraw == 0 || typeof withdraw !== "number") {
+    if (!withdraw || withdraw == 0 || typeof parseInt(withdraw) === null) {
       console.log("Bad Withdraw");
       return;
     }
 
-    const theBalance = parseInt(balance) + parseInt(withdraw);
+    const theBalance = parseInt(balance) - parseInt(withdraw);
     setBalance(theBalance);
     ctx.users[ctx.users.length - 1].balance = theBalance;
 
     setStatus("Success!");
     setTimeout(() => setStatus(""), 3000);
 
-    setDeposit(null);
-  }
-
-  function subtractWithdraw() {
-    if (withdraw || withdraw == 0 || typeof withdraw !== "number") {
-      console.log("Bad Withdraw");
-      return;
-    }
-    setBalance(balance + withdraw);
-    ctx.activeuser.balance = balance;
+    setWithdraw(null);
   }
 
   return (
@@ -96,7 +88,7 @@ function Withdraw() {
                 className="form-control"
                 id="withdraw"
                 placeholder="Enter Withdraw Amount"
-                value=""
+                value={!withdraw ? "" : withdraw}
                 onChange={(e) => updateWithdraw(e.currentTarget.value)}
               />
               <br />
