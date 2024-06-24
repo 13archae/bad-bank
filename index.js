@@ -13,6 +13,7 @@ function Spa() {
             },
           ],
           activeuser: {},
+          navitem: "home",
         }}
       >
         <Route path="/" exact component={Home}></Route>
