@@ -26,16 +26,17 @@ function NavBar() {
           <ul className="navbar-nav">
             <li className="nav-item">
               <a
-                id="home"
-                title="Home is where you end-up when you login!"
-                className={active === "home" ? "nav-link active" : "nav-link"}
-                onClick={() => setStateActive("home")}
-                href="#/"
+                id="createaccount"
+                title="Create a new account at our bank!"
+                className={
+                  active === "createaccount" ? "nav-link active" : "nav-link"
+                }
+                onClick={() => setStateActive("createaccount")}
+                href="#/createaccount/"
               >
-                Home
+                Create Account
               </a>
             </li>
-
             <li className="nav-item">
               <a
                 id="deposit"
@@ -62,19 +63,7 @@ function NavBar() {
                 Withdraw
               </a>
             </li>
-            <li className="nav-item">
-              <a
-                id="createaccount"
-                title="Create a new account at our bank!"
-                className={
-                  active === "createaccount" ? "nav-link active" : "nav-link"
-                }
-                onClick={() => setStateActive("createaccount")}
-                href="#/createaccount/"
-              >
-                Create Account
-              </a>
-            </li>
+
             <li className="nav-item">
               <a
                 id="alldata"

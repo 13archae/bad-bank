@@ -54,6 +54,14 @@ function Deposit() {
     setStatus("Success!");
     setTimeout(() => setStatus(""), 3000);
 
+    ctx.activity.push({
+      type: "Deposit",
+      amount: deposit,
+      balance: theBalance,
+      user: ctx.users[ctx.users.length - 1].name,
+      time: Date.now(),
+    });
+
     setDeposit(null);
   }
 

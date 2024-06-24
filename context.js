@@ -26,3 +26,50 @@ function Card(props) {
     </div>
   );
 }
+
+function DataCard(props) {
+  function classes() {
+    const bg = props.bgcolor ? " bg-" + props.bgcolor : " ";
+    const txt = props.txtcolor ? " text-" + props.txtcolor : " text-black";
+    //console.log("bg: ", bg);
+    //console.log("txt: ", txt);
+
+    return "card mb-3" + bg + txt;
+  }
+
+  function buildCard() {
+    //for(let i = 0; )
+  }
+
+  return (
+    <div className={classes()} style={{ maxWidth: "80%" }}>
+      <div className="card-body">
+        <div className="row">
+          <div className="col-3">
+            {props.type && <p className="card-text">Type: {props.type}</p>}
+          </div>
+
+          <div className="col-2">
+            {props.amount && (
+              <p className="card-text">Amount: ${props.amount}</p>
+            )}
+          </div>
+
+          <div className="col-2">
+            {props.balance && (
+              <p className="card-text">Balance: ${props.balance}</p>
+            )}
+          </div>
+
+          <div className="col-2">
+            {props.user && <p className="card-text">User: {props.user}</p>}
+          </div>
+
+          <div className="col-3">
+            {props.time && <p className="card-text">Time: {props.time}</p>}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}

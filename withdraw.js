@@ -56,6 +56,14 @@ function Withdraw() {
     setBalance(theBalance);
     ctx.users[ctx.users.length - 1].balance = theBalance;
 
+    ctx.activity.push({
+      type: "Withdraw",
+      amount: withdraw,
+      balance: theBalance,
+      user: ctx.users[ctx.users.length - 1].name,
+      time: Date.now(),
+    });
+
     setStatus("Success!");
     setTimeout(() => setStatus(""), 3000);
 

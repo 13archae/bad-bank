@@ -14,6 +14,7 @@ function Spa() {
           ],
           activeuser: {},
           navitem: "home",
+          activity: [],
         }}
       >
         <Route path="/" exact component={Home}></Route>
