@@ -9,7 +9,7 @@ function CreateAccount() {
   function handleCreate() {
     console.log(name, email, password);
 
-    //if (!validate()) return;
+    if (!validate()) return;
 
     ctx.users.push({ name, email, password, balance: 100 });
     ctx.activity.push({
