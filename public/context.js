@@ -37,10 +37,6 @@ function DataCard(props) {
     return "card mb-3" + bg + txt;
   }
 
-  function buildCard() {
-    //for(let i = 0; )
-  }
-
   return (
     <div className={classes()} style={{ maxWidth: "80%" }}>
       <div className="card-body">

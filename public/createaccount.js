@@ -11,7 +11,7 @@ function CreateAccount() {
 
     if (!validate()) return;
 
-    ctx.users.push({ name, email, password, balance: 100 });
+    /*     ctx.users.push({ name, email, password, balance: 100 });
     ctx.activity.push({
       type: "Create Account",
       amount: 100,
@@ -19,6 +19,18 @@ function CreateAccount() {
       user: name,
       time: Date.now(),
     });
+
+    setShow(false); */
+
+    const apiUrl = `http://localhost:3000/account/create/${name}/${email}/${password}`;
+
+    console.log("apiurl:  ", apiUrl);
+
+    (async () => {
+      const res = await fetch(apiUrl);
+      const data = await res.json();
+      console.log(data);
+    })();
     setShow(false);
   }
 
