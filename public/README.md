@@ -12,7 +12,8 @@ An MIT Exec Full-Stack Javascript Boot Camp Project: this application was writte
 4. Run `node index.html`
 5. Navigate to `http://localhost:3000`
 6. Welcome to the Bad Bank!
-   !['bad-bank Welcome Screen'](https://github.com/13archae/bad-bank/blob/main/welcometobadbank.png?raw=true)
+
+!['bad-bank Welcome Screen'](https://github.com/13archae/bad-bank/blob/main/public/img/welcometobadbank.png?raw=true)
 
 ## Technology Stack
 
