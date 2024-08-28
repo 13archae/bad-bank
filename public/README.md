@@ -8,7 +8,7 @@ An MIT Exec Full-Stack Javascript Boot Camp Project: this application was writte
 
 1. Clone the repository `git clone git@github.com:13archae/bad-bank.git`
 2. Run `npm install` in the project root
-3. Configure your datastore in dal.js
+3. Configure your datastore in `/dal.js`
 4. Run `node index.html`
 5. Navigate to `http://localhost:3000`
 6. Welcome to the Bad Bank!
